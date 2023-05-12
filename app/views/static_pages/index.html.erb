@@ -1,0 +1,9 @@
+<%= form_with url: @static_pages, method: :get do |form| %>
+  <%= form.label :uid, "Insert the ID you want to look-up:" %>
+  <%= form.text_field :uid %>
+  <%= form.submit "Find!" %>
+<% end %><br />
+
+<% @pics.each do |p| %>
+  <img src="https://live.staticflickr.com/<%= "#{p.server}/#{p.id}_#{p.secret}"%>.jpg"><br />
+<% end %>
